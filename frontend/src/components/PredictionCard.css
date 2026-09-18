@@ -1,0 +1,107 @@
+.prediction-card {
+  position: relative;
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.prediction-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prediction-card__face-id {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-text-faint);
+}
+
+.prediction-card__badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  letter-spacing: 0.01em;
+}
+
+.prediction-card__badge--male {
+  color: var(--color-male);
+  background: rgba(94, 174, 255, 0.12);
+  border: 1px solid rgba(94, 174, 255, 0.3);
+}
+
+.prediction-card__badge--female {
+  color: var(--color-female);
+  background: rgba(244, 114, 182, 0.12);
+  border: 1px solid rgba(244, 114, 182, 0.3);
+}
+
+.prediction-card__age {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.prediction-card__age-value {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.prediction-card__age-unit {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.prediction-card__confidence {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.prediction-card__confidence-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.prediction-card__confidence-value {
+  font-family: var(--font-mono);
+  color: var(--color-text);
+}
+
+.prediction-card__confidence-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-border);
+  overflow: hidden;
+}
+
+.prediction-card__confidence-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 400ms ease;
+}
+
+.prediction-card__confidence-fill--male {
+  background: var(--color-male);
+}
+
+.prediction-card__confidence-fill--female {
+  background: var(--color-female);
+}
+
+.prediction-card__box-info {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-text-faint);
+  border-top: 1px dashed var(--color-border);
+  padding-top: 0.6rem;
+}

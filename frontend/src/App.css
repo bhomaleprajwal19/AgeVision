@@ -1,0 +1,264 @@
+.app {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app__main {
+  flex: 1;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.app__hero {
+  max-width: 640px;
+  margin-bottom: 2.5rem;
+}
+
+.app__hero-title {
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.app__hero-subtitle {
+  display: block;
+  margin-top: 0.75rem;
+  color: var(--color-text-muted);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  max-width: 52ch;
+}
+
+.app__dashboard {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.app__panel {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Viewfinder-style corner brackets, echoing the bounding-box motif used
+   throughout the product for detection results. */
+.app__panel::before,
+.app__panel::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.app__panel::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid var(--color-detect);
+  border-left: 2px solid var(--color-detect);
+  border-top-left-radius: var(--radius-lg);
+}
+
+.app__panel::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid var(--color-detect);
+  border-right: 2px solid var(--color-detect);
+  border-bottom-right-radius: var(--radius-lg);
+}
+
+@media (max-width: 900px) {
+  .app__dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .app__main {
+    padding: 1.75rem 1rem 3rem;
+  }
+
+  .app__panel {
+    padding: 1.125rem;
+    min-height: unset;
+  }
+}
+.camera-container {
+  width: 320px;
+  height: 240px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.webcam-mirror {
+  transform: scaleX(-1);
+}
+
+.camera-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+/* Camera section */
+.image-capture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Camera preview */
+.camera-container {
+  width: 320px;
+  height: 240px;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 2px solid #ddd;
+  background: #000;
+}
+
+.webcam-mirror {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+/* Buttons */
+.image-capture button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Use Camera */
+.image-capture > button {
+  background: #2563eb;
+  color: white;
+}
+
+.image-capture > button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* Capture + Cancel container */
+.camera-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* Capture */
+.camera-buttons button:first-child {
+  background: #16a34a;
+  color: white;
+}
+
+.camera-buttons button:first-child:hover {
+  background: #15803d;
+}
+
+/* Cancel */
+.camera-buttons button:last-child {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.camera-buttons button:last-child:hover {
+  background: #d1d5db;
+}
+
+/* Error */
+.image-capture .error {
+  margin: 0;
+  color: #dc2626;
+  font-size: 14px;
+}
+.image-capture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+.image-capture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin: 24px 0;
+}
+.image-capture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.camera-container {
+  width: 320px;
+  height: 240px;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 2px solid #ddd;
+  background: #000;
+}
+
+.webcam-mirror {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.camera-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.image-capture button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.camera-open-button {
+  background: #2563eb;
+  color: white;
+}
+
+.capture-button {
+  background: #16a34a;
+  color: white;
+}
+
+.cancel-button {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.image-capture .error {
+  margin: 0;
+  color: #dc2626;
+  font-size: 14px;
+}

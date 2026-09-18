@@ -1,0 +1,51 @@
+.error-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  background: rgba(248, 113, 113, 0.07);
+  border-radius: var(--radius-md);
+}
+
+.error-message__icon {
+  width: 18px;
+  height: 18px;
+  color: var(--color-danger);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.error-message__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.error-message__title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.error-message__hint {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.error-message__retry {
+  flex-shrink: 0;
+  align-self: center;
+  background: transparent;
+  border: 1px solid var(--color-danger);
+  color: var(--color-danger);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.75rem;
+  font-size: 0.82rem;
+  transition: background-color 150ms ease;
+}
+
+.error-message__retry:hover {
+  background: rgba(248, 113, 113, 0.12);
+}
