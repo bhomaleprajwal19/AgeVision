@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from backend.routes.prediction import router as prediction_router
 
-FRONTEND_URL = os.getenv("FRONTEND_URL")
+FRONTEND_URL = os.getenv("FRONTEND_URLS","")
 
 app = FastAPI(
     title="Age and Gender Detection API",
@@ -17,9 +17,17 @@ allowed_origins = [
     "http://127.0.0.1:5173",
 ]
 
-if FRONTEND_URL:
-    allowed_origins.append(FRONTEND_URL)
+if FRONTEND_URLS:
 
+    allowed_origins.extend(
+
+        url.strip().rstrip("/")
+
+        for url in FRONTEND_URLS.split(",")
+
+        if url.strip()
+
+    )
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
